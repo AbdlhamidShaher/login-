@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="logina" >
+        <div class="loginb">
+            <div class="loginimg">
+                <img src="imgs\لوجو.png" alt="logo-bic" width="70px">
+            </div>
+            <div class="loginx">
+                <h1>Login </h1>
+            </div>
+    
+           <form class="loginx" oction="#">
+            <input type="text" class="name" placeholder="your name.." required>
+            <input type="text" class="email" placeholder="your email.." required>
+            <input type="text" class="phone" placeholder="your phone.." required>
+            <textarea  class="massage" cols="30" rows="4" placeholder="leave your massage"></textarea>
+            <button class="btn" type="submit">send</button>
+           </form>
+        </div>
+    </div>   
+
+
+    
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    
+    <script >
+        const form =document.querySelector('.loginx');
+
+
+      function sendMassage(e){
+        e.preventDefault();
+
+        
+    const   name =document.querySelector('.name');
+            email =document.querySelector('.email');
+            phone =document.querySelector('.phone');
+            massage =document.querySelector('.massage');
+   
+
+      Email.send({
+        SecureToken : "aaad2ed8-9f0b-425b-b508-65878405afce",
+        To : 'alhamidshher22@gmail.com',
+        From : "email.value",
+        Subject : "loginx",
+        Body : "massage.value"
+    }).then(
+      message => alert(message)
+    );
+   }
+     
+    form.addEventlistener('submit',sendMassage);
+
+
+
+    </script>
+</body>
+</html>
